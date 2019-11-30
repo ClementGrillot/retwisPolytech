@@ -19,14 +19,14 @@
   	  <![endif]-->
   	  <link rel="stylesheet" href="<c:url value="/static/styles/custom.css"/>" type="text/css" media="screen, projection"/> 
   	  <link rel="icon" type="image/x-ico" href="<c:url value="/static/images/favicon.ico"/>">
-	  <title>Retwis-J :: a Spring Data Redis demonstration</title>	
+	  <title>PolyTweetis :: a Polytech project with Redis</title>	
 	</head>
 
     <body>
       <div class="container">
       	  <div class="header">
       	  	  <div class="span-15 prepend-1">
-      	  	     <h2 class="alt"><a href="<c:url value="/"/>"">Retwis-J</a></h2>
+      	  	     <h2 class="alt"><a href="<c:url value="/"/>"">PolyTweetis</a></h2>
       	  	  </div>
 			  <div class="span-8 last right-align">
 			    <% 
