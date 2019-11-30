@@ -7,13 +7,13 @@ metadata:
   namespace: default
 spec:
   ports:
-    # the port that this service should serve on
-  - port: 6379
+  - nodePort: 30315
+    port: 6379
+    protocol: TCP
     targetPort: 6379
   selector:
     app: redis-master
-    tier: backend
-    role: master
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
