@@ -64,9 +64,9 @@ spec:
   type: LoadBalancer
   ports:
     # the port that this service should serve on
-  - port: 80
+  - port: 8080
   selector:
-    app: guestbook
+    app: retwis
     tier: frontend
 ---
 apiVersion: v1
