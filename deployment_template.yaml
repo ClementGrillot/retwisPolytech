@@ -38,6 +38,14 @@ kind: Service
 metadata:
   name: retwis
 spec:
+  ports:
+  - nodePort: 32332
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: retwis
+  sessionAffinity: None
   type: LoadBalancer
 ---
 apiVersion: apps/v1
