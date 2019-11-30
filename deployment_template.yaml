@@ -1,63 +1,112 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: redis-master
   name: redis-master
+  labels:
+    app: redis
+    tier: backend
+    role: master
 spec:
   ports:
-  - nodePort: 30315
-    port: 6379
+    # the port that this service should serve on
+  - port: 6379
     targetPort: 6379
   selector:
-    app: redis-master
-  type: LoadBalancer
+    app: redis
+    tier: backend
+    role: master
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
-  labels:
-    app: redis-master
   name: redis-master
+  # these labels can be applied automatically 
+  # from the labels in the pod template if not set
+  labels:
+    app: redis
+    role: master
+    tier: backend
 spec:
+  # this replicas value is default
+  # modify it according to your case
   replicas: 1
+  # selector can be applied automatically 
+  # from the labels in the pod template if not set
+  # selector:
+  #   app: guestbook
+  #   role: master
+  #   tier: backend
   template:
     metadata:
       labels:
-        app: redis-master
+        app: redis
+        role: master
+        tier: backend
     spec:
       containers:
-      - image: eu.grc.io/prjpolytech/redis:latest
-        imagePullPolicy: Always
+      - name: redis-master
+        image: eu.gcr.io/prjpolytech/redis:latest  # or just image: redis
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
         ports:
         - containerPort: 6379
-      restartPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: retwis
-spec:
-  ports:
-  - nodePort: 32332
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
-  selector:
-    app: retwis
-  sessionAffinity: None
-  type: LoadBalancer
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
+  name: frontend
   labels:
     app: retwis
-  name: retwis
+    tier: frontend
 spec:
+  type: LoadBalancer
+  ports:
+    # the port that this service should serve on
+  - port: 80
+  selector:
+    app: guestbook
+    tier: frontend
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: frontend
+  # these labels can be applied automatically
+  # from the labels in the pod template if not set
+  labels:
+    app: retwis
+    tier: frontend
+spec:
+  # this replicas value is default
+  # modify it according to your case
   replicas: 1
+  # selector can be applied automatically
+  # from the labels in the pod template if not set
+  # selector:
+  #   app: guestbook
+  #   tier: frontend
+  template:
+    metadata:
+      labels:
+        app: retwis
+        tier: frontend
     spec:
       containers:
-      - image: RETWIS_DOCKER_IMAGE
-        imagePullPolicy: Always
-      restartPolicy: Always
+      - name: retwis
+        image: RETWIS_DOCKER_IMAGE
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+          # If your cluster config does not include a dns service, then to
+          # instead access environment variables to find service host
+          # info, comment out the 'value: dns' line above, and uncomment the
+          # line below.
+          # value: env
+        ports:
+        - containerPort: 8080
