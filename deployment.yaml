@@ -59,8 +59,8 @@ spec:
         app: redis-master
     spec:
       containers:
-      - image: eu.gcr.io/prjpolytech/redis@sha256:e73ef998c22f9a98793d9951bb2915cd945d8fa6f9ec1b324e85d19617efc2fd
-        imagePullPolicy: IfNotPresent
+      - image: eu.gcr.io/prjpolytech/redis
+        imagePullPolicy: Always
         name: redis-sha256
         resources: {}
         terminationMessagePath: /dev/termination-log
@@ -151,8 +151,8 @@ spec:
         app: retwis
     spec:
       containers:
-      - image: eu.gcr.io/prjpolytech/retwis@sha256:f00076bc2346f17c0d8b408e9246985b9b4d3c3a920125f84aa9cbd739982c13
-        imagePullPolicy: IfNotPresent
+      - image: eu.gcr.io/prjpolytech/retwis:latest
+        imagePullPolicy: Always
         name: retwis-sha256
         resources: {}
         terminationMessagePath: /dev/termination-log
