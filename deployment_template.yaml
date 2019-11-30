@@ -17,7 +17,7 @@ spec:
     role: master
 ---
 apiVersion: v1
-kind: ReplicationController
+kind: Deployment
 metadata:
   name: redis-master
   # these labels can be applied automatically 
@@ -71,7 +71,7 @@ spec:
     tier: frontend
 ---
 apiVersion: v1
-kind: ReplicationController
+kind: Deployment
 metadata:
   name: frontend
   # these labels can be applied automatically
