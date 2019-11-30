@@ -59,7 +59,7 @@ spec:
         app: redis-master
     spec:
       containers:
-      - image: REDIS_DOCKER_IMAGE
+      - image: eu.grc.io/prjpolytech/redis:latest
         imagePullPolicy: Always
         name: redis-sha256
         resources: {}
