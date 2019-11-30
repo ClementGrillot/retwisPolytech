@@ -16,8 +16,8 @@ spec:
     tier: backend
     role: master
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
   name: redis-master
   # these labels can be applied automatically 
@@ -70,8 +70,8 @@ spec:
     app: retwis
     tier: frontend
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
   name: frontend
   # these labels can be applied automatically
