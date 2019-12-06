@@ -97,7 +97,6 @@ spec:
       containers:
       - name: retwis
         image: RETWIS_DOCKER_IMAGE
-        imagePullPolicy: "Always"
         resources:
           requests:
             cpu: 100m
