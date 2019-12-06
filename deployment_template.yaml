@@ -34,7 +34,7 @@ spec:
         tier: backend
     spec:
       containers:
-      - name: master
+      - name: redis-master
         image: eu.gcr.io/prjpolytech/redis:latest  # or just image: redis
         resources:
           requests:
