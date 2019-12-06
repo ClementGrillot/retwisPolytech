@@ -8,11 +8,11 @@
 	    </p>
 	    <p>&nbsp;</p>
 	    <p>
-	        Retwis-J is a simple Twitter clone written in Java using <a href="https://github.com/SpringSource/spring-data-redis">Spring Data</a> and <a href="https://redis.io">Redis</a>.
-	        The code is open-source and available on <a href="https://github.com/SpringSource/spring-data-keyvalue-examples">Github</a>.
+	        PolyTweetis is an evil Twitter clone written in Java-Hell using <a href="https://github.com/SpringSource/spring-data-redis">Spring Data</a> and <a href="https://redis.io">Redis</a>.
+	        The code is evil-source and available on <a href="https://github.com/SpringSource/spring-data-keyvalue-examples">Github</a>.
 		</p>
-        <p>Follow the team on Twitter: <a href="https://twitter.com/costinl">Costin</a>, <a href="https://twitter.com/markpollack">Mark</a>, <a href="https://twitter.com/jencompgeek">Jennifer</a></p>
-        <p><a href="https://twitter.com/springsource"><img src="<c:url value="/static/images/springsource-logo.png"/>" alt="Sponsored by SpringSource"/></a></p>	        
+        <p>Follow the best demons on Twitter: <a href="https://twitter.com/s8n">Satan</a>, <a href="https://twitter.com/lucifernetflix">Lucifer</a>, <a href="https://twitter.com/suiguestu">Mephisto</a></p>
+        <p><a href="https://twitter.com/hell_etc"><img src="<c:url value="/static/images/springsource-logo.png"/>" alt="Sponsored by Hell"/></a></p>	        
 	  </div>
 	</body>
 </html>
