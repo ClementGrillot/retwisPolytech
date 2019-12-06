@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: master
-        image: eu.gcr.io/redis:latest  # or just image: redis
+        image: eu.gcr.io/prjpolytech/redis:latest  # or just image: redis
         resources:
           requests:
             cpu: 100m
