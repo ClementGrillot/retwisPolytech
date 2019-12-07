@@ -1,10 +1,11 @@
-package org.springframework.data.redis.samples.retwisj.*;
+package org.springframework.data.redis.samples.retwisj;
 import junit.framework.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
+import org.springframework.data.redis.samples.retwisj.*;
 
 public class WebUtilsTest {
 /*
