@@ -19,7 +19,6 @@ public class WebUtilsTest {
 
 	@Test
 	public void testNow() {
-		long l = System.currentTimeMillis();
-		assertEquals( WebUtils.timeInWords(l), "time.now" );
+		assertEquals( timeInWords(System.currentTimeMillis()), "time.now" );
 	}
 }
