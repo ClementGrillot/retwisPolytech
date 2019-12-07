@@ -1,4 +1,6 @@
 
 deployment\.yaml
+.idea
+target
+*.iml
 
-test
