@@ -7,14 +7,14 @@ import org.junit.After;
 import org.junit.Test;
 
 public class MaxTest {
-
+/*
 	final static long millisIn2019 = 1575727244556; 
 
   	@Test
 	public void testAt2pm() {
 		assertEquals( WebUtils.timeInWords(millisIn2019), "time.hours#" );
 	}
-
+*/
 
 	@Test
 	public void testNow() {
