@@ -3,7 +3,7 @@ package org.springframework.data.redis.samples.retwisj;
 import junit.framework.*;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import org.springframework.data.redis.samples.retwisj.WebUtils;
+import org.springframework.data.redis.samples.retwisj.web.WebUtils;
 
 public class WebUtilsTest {
 /*
