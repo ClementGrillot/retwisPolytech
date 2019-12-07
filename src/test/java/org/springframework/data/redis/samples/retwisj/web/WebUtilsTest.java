@@ -6,17 +6,19 @@ import org.junit.Test;
 import org.springframework.data.redis.samples.retwisj.web.WebUtils;
 
 public class WebUtilsTest {
-/*
-	final static long millisIn2019 = 1575727244556; 
 
-  	@Test
-	public void testAt2pm() {
-		assertEquals( WebUtils.timeInWords(millisIn2019), "time.hours#" );
-	}
-*/
 
 	@Test
 	public void testNow() {
 		assertEquals( WebUtils.timeInWords(System.currentTimeMillis()), "time.now" );
 	}
+
+
+  	@Test
+	public void testAt2pm() {
+		long l = System.currentTimeMillis();
+		Thread.sleep(1100);
+		assertEquals( WebUtils.timeInWords(l), "time.minute.less" );
+	}
+
 }
