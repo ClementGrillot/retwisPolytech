@@ -76,7 +76,7 @@ public class RetwisController {
 	}
 
 	@RequestMapping("/signIn")
-	public String signIn(@RequestParam(required = false) String name, @RequestParam(required = false) String pass, Model model, HttpServletResponse response) {
+	public String signIn(@RequestParam(required = false) String name, @RequestParam(required = false) String pass, Model model, HttpServletResponse response) throws Exception{ 
 		// add tracing cookie
 		if (retwis.auth(name, pass)) {
 			addAuthCookie(retwis.addAuth(name), name, response);
@@ -84,7 +84,7 @@ public class RetwisController {
 		}
 		else if (StringUtils.hasText(name) || StringUtils.hasText(pass)) {
 			model.addAttribute("errorpass", Boolean.TRUE);
-			System.out.println("It worked Sacha, Fuck Maxime");
+			System.out.println("It worked");
 			throw new Exception();
 		}
 		// go back to sign in screen
