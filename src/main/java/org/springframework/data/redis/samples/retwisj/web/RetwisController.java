@@ -84,8 +84,7 @@ public class RetwisController {
 		}
 		else if (StringUtils.hasText(name) || StringUtils.hasText(pass)) {
 			model.addAttribute("errorpass", Boolean.TRUE);
-			System.out.println("It worked");
-			throw new Exception();
+			System.out.println("AuthentificationError: Wrong credentials");
 		}
 		// go back to sign in screen
 		return "signin";
