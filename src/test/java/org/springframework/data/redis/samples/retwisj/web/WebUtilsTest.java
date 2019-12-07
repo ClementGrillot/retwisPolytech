@@ -15,7 +15,7 @@ public class WebUtilsTest {
 
 
   	@Test
-	public void testAt2pm() {
+	public void testAt2pm() throws InterruptedException {
 		long l = System.currentTimeMillis();
 		Thread.sleep(1100);
 		assertEquals( WebUtils.timeInWords(l), "time.minute.less" );
