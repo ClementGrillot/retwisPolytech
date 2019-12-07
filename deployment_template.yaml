@@ -7,7 +7,6 @@ metadata:
     tier: backend
     role: master
 spec:
-  type: LoadBalancer
   ports:
     # the port that this service should serve on
   - port: 6379
