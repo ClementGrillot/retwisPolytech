@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
 
-public class MaxTest {
+public class WebUtilsTest {
 /*
 	final static long millisIn2019 = 1575727244556; 
 
