@@ -84,6 +84,8 @@ public class RetwisController {
 		}
 		else if (StringUtils.hasText(name) || StringUtils.hasText(pass)) {
 			model.addAttribute("errorpass", Boolean.TRUE);
+			System.out.println("It worked Sacha, Fuck Maxime");
+			throw new Exception();
 		}
 		// go back to sign in screen
 		return "signin";
